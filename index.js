@@ -4,7 +4,7 @@ const app = express();
 app.use(cors()); //cors origin
 app.use(express.json()); 
 const mongoose = require('mongoose');
-// mongoose.set('strictQuery', false); 
+mongoose.set('strictQuery', false); 
 const port = process.env.PORT || 5000
 
 app.get('/', (req, res) => {
@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 connectMongoDB().then(()=>console.log("MongoDB connected")).catch(err => console.log(err));
 
 async function connectMongoDB() {
-  await mongoose.connect('mongodb+srv://afra:afra@cluster0.tueszmr.mongodb.net/?retryWrites=true&w=majority');
+  await mongoose.connect('mongodb+srv://crmProj2024:crmProj2024@cluster0.yxxmuu3.mongodb.net/?retryWrites=true&w=majority');
 }
 
 app.use('/ticket', require('./route/ticket.route'));
